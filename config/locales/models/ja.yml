@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 
+        restrict_dependent_destroy:
+          has_one: 
+    attributes:
+      user:
+        name: 氏名
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+        email: メールアドレス
+        
