@@ -6,14 +6,15 @@
   width: 100vw;
   height: 100vh;
   background-image: image-url('home.jpg');
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-color: #464646;
+  margin-top: -20px;
   
   .users-new-container {
-    padding-top: 220px;
+    padding-top: 200px;
     
     .form-group {
       margin-bottom: 20px;
