@@ -1,29 +1,41 @@
+.navbar-transparent {
+  margin-bottom: 0px;
+  background-color: rgba(0,0,0,0.5);
+  a {
+    color: #fff !important;
+  }
 
-
-
-.text {
-  color: #aaffff;
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
+  }
+  .header-logo{
+    font-size: 32px;
+  }
+  
 }
 
-
+.text {
+  color: #fff;
+}
 
 .btn-blue {
-  color: #aaffff;
-  border: 3px solid #aaffff;
+  color: #fff;
+  border: 3px solid #fff;
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 20px;
   background-color: rgba(0,0,0,0.0);
   
   &:hover {
-    color: #00FFFF;
+    color: #FFF;
   }
 }
 
 .home-hero-wrapper {
   width: 100vw;
   height: 100vh;
-  background: image-url('home.jpg');
+  background: image-url('');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;

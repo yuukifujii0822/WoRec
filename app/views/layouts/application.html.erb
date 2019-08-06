@@ -14,7 +14,22 @@
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
 　　
-　
+　  <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to root_path do %>
+          <span class="header-logo"> WoRec </span>
+        <% end %>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 　　
     <%= yield %>
     

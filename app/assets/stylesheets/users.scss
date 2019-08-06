@@ -5,7 +5,7 @@
 .users-new-wrapper {
   width: 100vw;
   height: 100vh;
-  background-image: image-url('home.jpg');
+  background-image: image-url('');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -36,4 +36,27 @@
 
 ul {
   list-style: none;
+}
+
+.users-mypage-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  margin-top: -20px;
+}
+
+.mypage-container {
+  padding-top: 150px;
+}
+
+.mypage-container h1{
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  padding-bottom: 20px;
 }
