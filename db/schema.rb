@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_024152) do
+ActiveRecord::Schema.define(version: 2019_08_08_055424) do
 
   create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body_region"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_024152) do
     t.text "self_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_08_08_024152) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "exercise_id"
   end
 
 end
