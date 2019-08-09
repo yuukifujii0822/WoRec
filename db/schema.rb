@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_055424) do
+ActiveRecord::Schema.define(version: 2019_08_09_014801) do
 
   create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body_region"
     t.string "exercise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "workout_id"
+    t.decimal "weight", precision: 10
+    t.integer "rep"
+    t.integer "set_count"
+    t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,10 +48,6 @@ ActiveRecord::Schema.define(version: 2019_08_08_055424) do
   end
 
   create_table "workouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "weight", precision: 10
-    t.integer "rep"
-    t.integer "set"
-    t.text "note"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
