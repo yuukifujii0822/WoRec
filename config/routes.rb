@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'body/new'
   get 'exercises/new'
   get 'menus/new'
   get 'profiles/new'
