@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get 'exercises/new'
+  get 'menus/new'
+  get 'profiles/new'
   get 'workouts/new'
   get 'sessions/new'
   root to: 'pages#home'
@@ -8,6 +11,9 @@ Rails.application.routes.draw do
   
   resource :users
   resource :workouts
+  resource :exercises
+  resource :profiles
+  resource :menus
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

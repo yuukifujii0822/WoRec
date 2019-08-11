@@ -2,11 +2,17 @@
   <div class="container mypage-container">
     <h1>My Page</h1>
     <div class="row ">
-      <div class="col-md-offset-2 col-md-4">
+      <!--ワークアウト記録ページへのリンク-->
+      <div class="col-md-4">
         <%= link_to 'ワークアウトを記録する', new_workouts_path , class: 'btn btn-block btn-blue' %>
       </div>
+      <!--ワークアウト閲覧ページへのリンク-->
       <div class="col-md-4">
         <%= link_to 'ワークアウト記録を見る', "#" ,class: 'btn btn-block btn-blue' %>
+      </div>
+      <!--ワークアウトを追加する-->
+      <div class="col-md-4">
+        <%= link_to 'ワークアウトを追加する', exercises_new_path ,class: 'btn btn-block btn-blue' %>
       </div>
     </div>
   </div>

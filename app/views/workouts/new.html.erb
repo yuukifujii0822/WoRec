@@ -1,12 +1,24 @@
-<div class="new-workout-wrapper">
-  <div class="container new-workout-container">
+<div class="workout-new-wrapper">
+  <div class="container workout-new-container">
     <div class="row">
-      <h1 class="text">ワークアウトを記録する</h1>
-      <%= form_for @workout do |f| %>
-        
-      
-      
-      <% end %>  
+      <div class="col-md-12">
+        <h1 class="text">ワークアウトを記録する</h1>
+        <%= form_for @workout do |f| %>
+          <!--日付入力フォーム-->
+          <div class="date-form">
+            <%= f.label :date, class:"date-label" %>
+            <%= f.date_select :date, class:"date-select" %>
+          </div>
+          <!--種目入力-->
+          <div class="exercise-form">
+            <%= %>
+            <%= %>
+          </div>
+          
+          
+          
+        <% end %>  
+      </div>
     </div>
   </div>
 </div>
