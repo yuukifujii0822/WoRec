@@ -1,0 +1,40 @@
+
+.exercise-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: image-url('');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  margin-top: -20px;
+}
+
+.exercise-new-container {
+  padding-top: 100px;
+  
+  h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+  }
+  
+}
+
+.body-form {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  
+  .body-label{
+    color: #fff;
+  }
+ 
+}
+
+.add-btn {
+  padding-top: 20px;
+}

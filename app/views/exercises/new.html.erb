@@ -1,26 +1,27 @@
 <div class="exercise-new-wrapper" >
-  <div class="container">
+  <div class="container exercise-new-container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">ワークアウト種目を追加する</h1>
-        <%= form_for @exercise do |f| %>
-        　<!--部位入力-->
-          <div class="form-group">
-            <%= f.label :image %>
-            <%= f.file_field :image%>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
-          </div>
-          
-          <% if logged_in? %>
-            <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
-          <% end %>
-          
+      <h1>ワークアウト種目を追加する</h1>
+      <%= form_for @exercise do |f| %>
+        <!--部位入力-->
+      <div class="col-md-offset-4 body-form">
+        <%= f.label :body_id, "部位",  class:"body-label" %>
+        <%= f.collection_select :body_id, Body.all, :id, :name, :prompt => true %>
+      </div>
+      <!--種目名入力-->
+      <div class="col-md-offset-4 col-md-4 ">
+        <%= f.label :name, "種目名",  class: 'text' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    
+        <!--追加ボタン-->
+      <div class="col-md-offset-4 col-md-4 add-btn">
+        <% if logged_in? %>
+        <%= f.submit '追加', class: 'btn-block btn-blue' %>
         <% end %>
       </div>
-    </div>
+          
+      <% end %>
+    </div> 
   </div>
 </div>
