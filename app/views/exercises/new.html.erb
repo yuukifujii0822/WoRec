@@ -1,5 +1,6 @@
 <div class="exercise-new-wrapper" >
   <div class="container exercise-new-container">
+    <!--種目追加要素-->
     <div class="row">
       <h1>ワークアウト種目を追加する</h1>
       <%= form_for @exercise do |f| %>
@@ -20,8 +21,11 @@
         <%= f.submit '追加', class: 'btn-block btn-blue' %>
         <% end %>
       </div>
-          
       <% end %>
     </div> 
+    
+    <!--種目一覧-->
+    
+    
   </div>
 </div>
