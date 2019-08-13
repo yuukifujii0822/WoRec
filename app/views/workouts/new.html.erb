@@ -5,25 +5,50 @@
         <!--日付入力フォーム-->      
         <div class="row">
           <div class="col-md-offset-4 col-md-4 date-form">
-            <%= f.label :date, "日付" ,class:"date-label" %>
+            <%= f.label :date, "日付" ,class:"label" %>
             <%= f.date_select :date, class:"date-select" %>
+            <!--user_idを飛ばす-->
+            <%= f.hidden_field :user_id, value: current_user.id %>
           </div>
         </div>    
         <!--種目入力-->
         <div class="row">
           <div class="col-md-offset-4 col-md-4 exercise-form">
-            <%= f.label :exercise_id, "種目名", class:"exercise-label" %>
+            <%= f.label :exercise_id, "種目名", class:"label" %>
             <%= f.collection_select :exercise_id, Exercise.all, :id, :name, :prompt => true %>
           </div>
         </div>  
-          
-          <!--Menu入力-->
-          <div class>
-            
+        <!--Menu入力-->
+        <%= f.fields_for :menus do |i| %>
+          <!--セット数-->
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <%= i.label :set_count, "セット", class:"label" %>
+              <%= i.number_field :set_count, class:"set-form" %>
+            </div>
           </div>
-          
-          
-          
+          <!--重量-->
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <%= i.label :weight, "重　さ", class:"label" %>
+              <%= i.number_field :weight, class:"weight-form" %>
+            </div>
+          </div>
+          <!--回数-->
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <%= i.label :rep, "回　数", class:"label" %>
+              <%= i.number_field :rep, class:"rep-form" %>
+            </div>
+          </div>  
+          <!--メモ-->
+          <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+              <%= i.label :note, "メ　モ", class:"note-label" %>
+              <%= i.text_field :note, class:"note-form" %>
+            </div>
+          </div>    
+        <% end %>  
         <!--記録ボタン-->  
         <div class="row">  
           <div class="col-md-offset-4 col-md-4 add-btn">
@@ -32,8 +57,6 @@
             <% end %>
           </div>
         </div>  
-        
       <% end %> 
-      </div>
   </div>
 </div>

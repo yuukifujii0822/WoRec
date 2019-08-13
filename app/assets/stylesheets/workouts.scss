@@ -22,18 +22,32 @@
   }
 }
 
-.date-form{
-  
-  .date-label {
-    color: #fff;
- }
- 
+.label {
+  color: #fff;
 }
+
 
 .exercise-form {
   margin-top: 20px;
-  
-  .exercise-label {
-    color: #fff;
-  }
 }
+
+.set-form, .weight-form, .rep-form {
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.note-label {
+  color: #fff;
+  font-size: 10px; 
+  margin-left: 8px;
+}
+
+.note-form {
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 210px;
+}
+
+  
+

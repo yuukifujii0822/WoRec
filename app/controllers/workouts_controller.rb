@@ -1,13 +1,12 @@
 class WorkoutsController < ApplicationController
   def new
     @workout = Workout.new
-    @menu = Menu.new
+    @workout.menus.build
   end
   
   def create
     @workout = Workout.new(workout_params)
-    @workout.user_id = current_user.id
-    
+
     if @workout.save
       redirect_to workouts_new_path, success: 'ワークアウトを記録しました'
     else
@@ -18,7 +17,7 @@ class WorkoutsController < ApplicationController
   
   private
   def workout_params
-    params.require(:workout).permit(:date, :exercise_id, menus_attributes: [:set_count, :weight, :rep, :note])
+    params.require(:workout).permit(:date, :exercise_id, :user_id, menus_attributes: [:set_count, :weight, :rep, :note])
   end
   
   
