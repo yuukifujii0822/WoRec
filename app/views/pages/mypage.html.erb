@@ -1,18 +1,22 @@
 <div class="users-mypage-wrapper">
   <div class="container mypage-container">
     <h1>My Page</h1>
-    <div class="row ">
+    <div class="row">
       <!--ワークアウト記録ページへのリンク-->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <%= link_to 'ワークアウトを記録する', new_workouts_path , class: 'btn btn-block btn-blue' %>
       </div>
       <!--ワークアウト閲覧ページへのリンク-->
-      <div class="col-md-4">
-        <%= link_to 'ワークアウト記録を見る', "#" ,class: 'btn btn-block btn-blue' %>
+      <div class="col-md-3">
+        <%= link_to 'ワークアウト記録を見る', "/workouts/index" ,class: 'btn btn-block btn-blue' %>
       </div>
       <!--ワークアウトを追加する-->
-      <div class="col-md-4">
-        <%= link_to 'ワークアウト種目', exercises_new_path ,class: 'btn btn-block btn-blue' %>
+      <div class="col-md-3">
+        <%= link_to 'ワークアウト種目を追加', new_exercises_path ,class: 'btn btn-block btn-blue' %>
+      </div>
+      <!--ワークアウト種目を確認する-->
+      <div class="col-md-3">
+        <%= link_to 'ワークアウト種目一覧', "/exercises/index" ,class: 'btn btn-block btn-blue' %>
       </div>
     </div>
   </div>

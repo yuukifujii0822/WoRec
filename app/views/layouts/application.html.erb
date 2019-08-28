@@ -14,22 +14,47 @@
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
 　　
+　　<% if logged_in? %>
 　  <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
           <span class="header-logo"> WoRec </span>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
-          <% if logged_in? %>
-            <li>
-              <%= link_to logout_path, method: :delete do %>
-                <span>ログアウト</span>
-              <% end %>
-            </li>
-          <% end %>
+          <li><!--マイページタブ-->
+            <%= link_to pages_mypage_path do %>
+              <span>マイページ</span>
+            <% end %>
+          </li>
+          <li><!--記録タブ-->
+            <%= link_to new_workouts_path do %>
+              <span>ワークアウトを記録</span>
+            <% end %>
+          </li>
+          <li><!--ワークアウト一覧タブ-->
+            <%= link_to workouts_index_path do %>
+              <span>ワークアウト一覧</span>
+            <% end %>
+          </li>
+          <li><!--種目追加タブ-->
+            <%= link_to  new_exercises_path do %>
+              <span>種目追加</span>
+            <% end %>
+          </li> 
+          <li><!--種目一覧タブ-->
+            <%= link_to  exercises_index_path do %>
+              <span>種目一覧</span>
+            <% end %>
+          </li>
+          <li><!--ログアウトタブ-->
+            <%= link_to logout_path, method: :delete do %>
+              <span>ログアウト</span>
+            <% end %>
+          </li>
         </ul>
       </div>
     </nav>
+　　<% end %>
 　　
     <%= yield %>
     

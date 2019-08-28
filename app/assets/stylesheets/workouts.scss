@@ -1,7 +1,7 @@
 
-.workout-new-wrapper {
+.workout-new-wrapper, {
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
   background: image-url('');
   background-position: center;
   background-repeat: no-repeat;
@@ -11,8 +11,23 @@
   margin-top: -20px;
 }
 
-.workout-new-container {
+.workout-index-wrapper {
+  width: 100vw;
+  height: 100%;
+  background: image-url('');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  margin-top: -20px;
+}
+
+
+
+.workout-new-container,.workout-index-container {
   padding-top: 100px;
+  height: 2000px;
   
   h1 {
     font-size: 50px;
@@ -49,5 +64,13 @@
   width: 210px;
 }
 
-  
+.workout-index {
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 10px;
+  font-size: 20px;
+}  
 
+.add , .close {
+  color: #fff;
+}

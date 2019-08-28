@@ -1,0 +1,20 @@
+<div class="workout-index-wrapper">
+  <div class="container workout-index-container">
+    <% @exercises.each do |exercise|%>
+      <% exercise.workouts.each do |workout|%>
+        <% workout.menus.each do |menu|%>  
+          <div class="row">
+            <div class="col-md-offset-3 col-md-6 workout-index">
+              <span>日付： </span><%= workout.date %><br>
+              <span>種目名： </span><%= exercise.name %><br>
+              <span>セット： </span><%= menu.set_count %><br>
+              <span>重量： </span><%= menu.weight%><span>kg</span><br>
+              <span>レップ数： </span><%= menu.rep %><span>回</span><br>
+              <span>メモ： </span><%= menu.note %>
+            </div>
+          </div>  
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

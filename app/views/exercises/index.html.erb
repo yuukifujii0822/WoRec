@@ -1,0 +1,15 @@
+<!--種目一覧-->
+<div class="exercise-index-wrapper">
+  <div class="container exercise-index-container">
+    <h1>種目一覧</h1>
+    <div class="row">
+      <div class="col-md-3 exercise-index-single">
+        <% @exercises.each do |exercise| %>
+          <ul class="exercise-name">
+            <li><%= exercise.name %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>  
+</div>

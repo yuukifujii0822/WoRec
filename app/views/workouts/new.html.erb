@@ -14,11 +14,12 @@
         <!--種目入力-->
         <div class="row">
           <div class="col-md-offset-4 col-md-4 exercise-form">
-            <%= f.label :exercise_id, "種目名", class:"label" %>
+            <%= f.label :exercise_id, "種目名", class: "label" %>
             <%= f.collection_select :exercise_id, Exercise.all, :id, :name, :prompt => true %>
           </div>
-        </div>  
-        <!--Menu入力-->
+        </div>
+        
+        <!--Menu入力　これを１つのまとまりに-->
         <%= f.fields_for :menus do |i| %>
           <!--セット数-->
           <div class="row">
@@ -45,10 +46,12 @@
           <div class="row">
             <div class="col-md-offset-4 col-md-4">
               <%= i.label :note, "メ　モ", class:"note-label" %>
-              <%= i.text_field :note, class:"note-form" %>
+              <%= i.text_field :note, class:"note-form", autocomplete: 'off' %>
             </div>
-          </div>    
+          </div>
         <% end %>  
+        <!--動的生成で作りたいまとまりはここまで-->
+        
         <!--記録ボタン-->  
         <div class="row">  
           <div class="col-md-offset-4 col-md-4 add-btn">
