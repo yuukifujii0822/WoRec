@@ -20,38 +20,40 @@
         </div>
         
         <!--Menu入力　これを１つのまとまりに-->
-        <%= f.fields_for :menus do |i| %>
+        <%= f.nested_fields_for :menus do |ff| %>
           <!--セット数-->
           <div class="row">
             <div class="col-md-offset-4 col-md-4">
-              <%= i.label :set_count, "セット", class:"label" %>
-              <%= i.number_field :set_count, class:"set-form" %>
+              <%= ff.label :set_count, "セット", class:"label" %>
+              <%= ff.number_field :set_count, class:"set-form" %>
             </div>
           </div>
           <!--重量-->
           <div class="row">
             <div class="col-md-offset-4 col-md-4">
-              <%= i.label :weight, "重　さ", class:"label" %>
-              <%= i.number_field :weight, class:"weight-form" %>
+              <%= ff.label :weight, "重　さ", class:"label" %>
+              <%= ff.number_field :weight, class:"weight-form" %>
             </div>
           </div>
           <!--回数-->
           <div class="row">
             <div class="col-md-offset-4 col-md-4">
-              <%= i.label :rep, "回　数", class:"label" %>
-              <%= i.number_field :rep, class:"rep-form" %>
+              <%= ff.label :rep, "回　数", class:"label" %>
+              <%= ff.number_field :rep, class:"rep-form" %>
             </div>
           </div>  
           <!--メモ-->
           <div class="row">
             <div class="col-md-offset-4 col-md-4">
-              <%= i.label :note, "メ　モ", class:"note-label" %>
-              <%= i.text_field :note, class:"note-form", autocomplete: 'off' %>
+              <%= ff.label :note, "メ　モ", class:"note-label" %>
+              <%= ff.text_field :note, class:"note-form", autocomplete: 'off' %>
+              <!--削除ボタン-->
+              <%= ff.remove_nested_fields_link '-', class: 'btn btn-danger', role: 'button' %>
             </div>
           </div>
-        <% end %>  
-        <!--動的生成で作りたいまとまりはここまで-->
-        
+        <% end %> 
+        <!--追加ボタン-->
+        <span><%= f.add_nested_fields_link :menus, '+', class: 'btn btn-primary add-button', role: 'button'  %></span>
         <!--記録ボタン-->  
         <div class="row">  
           <div class="col-md-offset-4 col-md-4 add-btn">
