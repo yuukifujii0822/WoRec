@@ -1,0 +1,22 @@
+<div class="workout-diary-wrapper">
+  <div class="container workout-diary-container">
+    <h3>日付を入力してください</h3>
+    <div class="row col-md-offset-4">
+      <%= form_tag({controller: :workouts, action: :diary},:method => 'get') do %>
+        <%= date_select :date, class: "date-select" %> 
+        <%= submit_tag '検索',:date => nil %>
+      <% end %>
+    </div>
+    
+    <% @workouts.each do |wo| %>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 workout-index">
+          <%= wo.date  %>
+          <%= wo.name%>
+          <%= wo.note %>
+        </div>
+      </div>  
+    <% end %>
+    
+  </div>
+</div>

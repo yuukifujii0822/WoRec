@@ -8,4 +8,5 @@ class Workout < ApplicationRecord
   belongs_to :exercise
   
   accepts_nested_attributes_for :menus, allow_destroy: true
+
 end

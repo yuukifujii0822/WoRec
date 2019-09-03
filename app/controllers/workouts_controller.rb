@@ -24,6 +24,10 @@ class WorkoutsController < ApplicationController
   end
   
   
+  def diary
+    @workouts = Workout.joins(:menus).select("workouts.*,menus.*")
+    @workouts = @workouts.joins(:exercise).select("exercises.*,workouts.*,menus.*")
+  end
   
   
   private

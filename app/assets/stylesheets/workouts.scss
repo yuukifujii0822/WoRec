@@ -1,7 +1,7 @@
 
-.workout-new-wrapper, {
+.workout-new-wrapper,.workout-diary-wrapper {
   width: 100vw;
-  height: 100vw;
+  height: 200vw;
   background: image-url('');
   background-position: center;
   background-repeat: no-repeat;
@@ -25,17 +25,41 @@
 
 
 
-.workout-new-container,.workout-index-container {
+.workout-new-container,.workout-diary-container{
   padding-top: 100px;
+  height: 2000px;
+  
+  h1, {
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+  }
+  
+}
+
+.workout-index-container {
+  padding-top: 150px;
   height: 2000px;
   
   h1 {
     font-size: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-weight: 900;
     text-align: center;
+    color: #fff;
   }
 }
+
 
 .label {
   color: #fff;

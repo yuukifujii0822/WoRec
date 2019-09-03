@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'charts/index'
-  get 'chart/index'
   get 'workouts/index' => 'workouts#index'
   get "exercises/index" => "exercises#index"
   get 'sessions/new'
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
   get "pages/mypage" => "pages#mypage"
   get "exercises/destroy",  to: "exercises#destroy"
   post "exercises/destroy",  to: "exercises#destroy"
+  get  "workouts/diary", to: "workouts#diary"
   
   resource :users
   resource :workouts
