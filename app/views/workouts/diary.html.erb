@@ -4,19 +4,30 @@
     <div class="row col-md-offset-4">
       <%= form_tag({controller: :workouts, action: :diary},:method => 'get') do %>
         <%= date_select :date, class: "date-select" %> 
-        <%= submit_tag '検索',:date => nil %>
+        <%= submit_tag '検索' %>
       <% end %>
     </div>
     
-    <% @workouts.each do |wo| %>
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6 workout-index">
-          <%= wo.date  %>
-          <%= wo.name%>
-          <%= wo.note %>
-        </div>
-      </div>  
-    <% end %>
+    <!--日付-->
+    
+    
+    <!--種目名-->
+    <div class= "workout-exercise" >
+    
+      <!--menu内容のeach文-->
+      <% @workouts.each do |menu| %>
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6 workout-menu">
+            <%= "#{menu.set_count}セット目" %> &emsp;
+            <%= "#{menu.weight}kg" %> &emsp;
+            <%= "#{menu.rep}回" %> &emsp;　<br>
+            <%= menu.note %>
+          </div>
+        </div>  
+      <% end %>
+    </div>
+    
+    
     
   </div>
 </div>

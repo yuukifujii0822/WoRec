@@ -25,8 +25,21 @@ class WorkoutsController < ApplicationController
   
   
   def diary
-    @workouts = Workout.joins(:menus).select("workouts.*,menus.*")
-    @workouts = @workouts.joins(:exercise).select("exercises.*,workouts.*,menus.*")
+    #テーブル結合部分#
+    @workouts1 = Workout.joins(:menus).select("workouts.*,menus.*")
+    @workouts2 = @workouts1.joins(:exercise).select("exercises.*,workouts.*,menus.*")
+    
+    
+    if params.has_key?(:date)
+      diary_date = Date.new params[:date]["{:class=>\"date-select\"}(1i)"].to_i,
+                    params[:date]["{:class=>\"date-select\"}(2i)"].to_i,
+                    params[:date]["{:class=>\"date-select\"}(3i)"].to_i
+    else 
+      diary_date = nil
+    end
+    
+    @workouts = @workouts2.where(date: diary_date)
+    
   end
   
   
@@ -34,7 +47,4 @@ class WorkoutsController < ApplicationController
   def workout_params
     params.require(:workout).permit(:date, :exercise_id, :user_id, menus_attributes: [:set_count, :weight, :rep, :note])
   end
-  
-  
-  
 end
