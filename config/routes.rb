@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "exercises/destroy",  to: "exercises#destroy"
   post "exercises/destroy",  to: "exercises#destroy"
   get  "workouts/diary", to: "workouts#diary"
+  get "workouts/chart", to: "workouts#chart"
   
   resource :users
   resource :workouts

@@ -37,10 +37,31 @@ class WorkoutsController < ApplicationController
     else 
       diary_date = nil
     end
+    #日付で検索
+    @workout_diary = @workouts2.where(date: diary_date)
     
-    @workouts = @workouts2.where(date: diary_date)
     
+    #二次元配列のロジック
+    results = {}
+    @workout_diary.each do |workout|
+      # ハッシュの初期化
+      results[workout.name] = [] if results[workout.name].nil?
+      # 下記の << は要素resultsが空だとエラーになるため上記if文が必要
+      results[workout.name] << { "set_count" => workout.set_count, "weight" => workout.weight, "rep" => workout.rep, "note" => workout.note }
+    end
+    
+    @results = results
   end
+
+
+  def chart
+    @workouts3 = Workout.joins(:menus).select("workouts.*,menus.*")
+    @workouts4 = @workouts3.joins(:exercise).select("exercises.*,workouts.*,menus.*")
+    
+    @workout_chart = @workouts4.where(exercise_id: params[:exercise_id])
+  end
+
+
   
   
   private

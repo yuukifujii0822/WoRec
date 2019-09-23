@@ -1,0 +1,28 @@
+<div class="workout-chart-wrapper">
+  <div class="container workout-chart-container">
+    <h3>種目を入力してください</h3>
+    <div class="row col-md-offset-4">
+      <%= form_tag({controller: :workouts, action: :chart},:method => 'get') do %>
+        <%= label_tag :id, "種目名", class: "label" %>
+        <%= collection_select(@exercise, :exercise_id, Exercise.all, :id, :name, :prompt => true) %>
+        <%= submit_tag '検索' %>
+      <% end %>
+    </div>
+    
+    <% @workout_chart.each do |workout| %>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 workout-menu">
+          <%= workout.date %>
+          <%= workout.name %>
+          <%= "#{workout.set_count}セット目" %>
+          <%= "#{workout.weight}kg" %>
+          <%= "#{workout.rep}回" %>
+          <%= workout.note%>
+        </div>
+      </div>
+    <% end %>
+    
+    
+  </div>
+</div>
+
