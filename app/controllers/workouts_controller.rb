@@ -39,7 +39,9 @@ class WorkoutsController < ApplicationController
     end
     #日付で検索
     @workout_diary = @workouts2.where(date: diary_date)
-    
+    @year = params[:date]["{:class=>\"date-select\"}(1i)"].to_i
+    @month = params[:date]["{:class=>\"date-select\"}(2i)"].to_i
+    @day = params[:date]["{:class=>\"date-select\"}(3i)"].to_i
     
     #二次元配列のロジック
     results = {}
@@ -51,6 +53,7 @@ class WorkoutsController < ApplicationController
     end
     
     @results = results
+    
   end
 
 
