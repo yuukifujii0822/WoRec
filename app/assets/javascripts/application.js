@@ -15,6 +15,7 @@
 //= require nested_form_fields
 //= require rails-ujs
 //= require activestorage
+//= require Chart.min
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .

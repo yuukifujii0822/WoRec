@@ -39,9 +39,7 @@ class WorkoutsController < ApplicationController
     end
     #日付で検索
     @workout_diary = @workouts2.where(date: diary_date)
-    @year = params[:date]["{:class=>\"date-select\"}(1i)"].to_i
-    @month = params[:date]["{:class=>\"date-select\"}(2i)"].to_i
-    @day = params[:date]["{:class=>\"date-select\"}(3i)"].to_i
+    @day = diary_date
     
     #二次元配列のロジック
     results = {}
@@ -62,6 +60,9 @@ class WorkoutsController < ApplicationController
     @workouts4 = @workouts3.joins(:exercise).select("exercises.*,workouts.*,menus.*")
     
     @workout_chart = @workouts4.where(exercise_id: params[:exercise_id])
+    
+   
+ 
   end
 
 
