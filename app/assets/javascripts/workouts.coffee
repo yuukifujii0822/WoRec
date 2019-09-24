@@ -3,10 +3,10 @@ window.draw_graph = ->
     myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["1月", "2月", "3月", "4月", "5月","6月"],
+            labels: gon.workout_date,
             datasets: [{
                 label: gon.exercise_name,
-                data: [40, 55, 60, 70, 60, 65],
+                data: [72.5, 68, 65],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 3
@@ -25,7 +25,7 @@ window.draw_graph = ->
                   }],
                 yAxes: [{
                     ticks: {
-                        min: 35
+                        min: 60
                         max: 75
                         beginAtZero:true
                     },
@@ -36,7 +36,7 @@ window.draw_graph = ->
                 }]
             },
             title: {
-            display: true,
+            display: false,
             text: '成長記録'
             }
         }

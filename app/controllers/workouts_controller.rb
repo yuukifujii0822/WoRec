@@ -73,6 +73,19 @@ class WorkoutsController < ApplicationController
     end
     gon.exercise_name = exercise_name
     
+    
+    #ワークアウトの日付(横軸)
+    if params.has_key?(:exercise_id)
+      #空の配列を用意
+      workout_date = []
+      @workout_chart.each do |workout_chart|
+        workout_date << "#{workout_chart.date}　#{workout_chart.set_count}セット目"
+      end
+    else
+      workout_date = nil
+    end
+    gon.workout_date = workout_date
+    
   end
 
 
