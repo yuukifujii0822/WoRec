@@ -86,6 +86,26 @@ class WorkoutsController < ApplicationController
     end
     gon.workout_date = workout_date
     
+    #１RMの重量(縦軸)
+    if params.has_key?(:exercise_id)
+      #空の配列を用意
+      rm_weight = []
+      @workout_chart.each do |workout_weight|
+        #coefficientはRMを求める係数
+        coefficient = 1 + (workout_weight.rep/40.to_f) 
+        rm_weight << (workout_weight.weight) * coefficient
+        #グラフの最小値、最大値
+        gon.min = rm_weight.min - 2.5
+        gon.max = rm_weight.max + 2.5
+      end
+    else
+      rm_weight = nil
+      gon.min = nil
+      gon.max = nil
+    end
+    #RMの配列
+    gon.rm_weight = rm_weight
+    
   end
 
 

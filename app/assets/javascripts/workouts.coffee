@@ -6,7 +6,7 @@ window.draw_graph = ->
             labels: gon.workout_date,
             datasets: [{
                 label: gon.exercise_name,
-                data: [72.5, 68, 65],
+                data: gon.rm_weight,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 3
@@ -25,8 +25,8 @@ window.draw_graph = ->
                   }],
                 yAxes: [{
                     ticks: {
-                        min: 60
-                        max: 75
+                        min: gon.min
+                        max: gon.max
                         beginAtZero:true
                     },
                     scaleLabel: {
