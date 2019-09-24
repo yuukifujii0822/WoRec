@@ -56,13 +56,23 @@ class WorkoutsController < ApplicationController
 
 
   def chart
+    #テーブルの結合
     @workouts3 = Workout.joins(:menus).select("workouts.*,menus.*")
     @workouts4 = @workouts3.joins(:exercise).select("exercises.*,workouts.*,menus.*")
     
+    #種目入力によるワークアウトの絞り込み
     @workout_chart = @workouts4.where(exercise_id: params[:exercise_id])
     
-   
- 
+    #グラフに渡す種目名の定義
+    #if文にしないと他のページから飛んできたときエラーになる。
+    if params.has_key?(:exercise_id)
+      exercise = Exercise.find_by(id: params[:exercise_id])
+      exercise_name = exercise.name
+    else
+      exercise_name = nil
+    end
+    gon.exercise_name = exercise_name
+    
   end
 
 

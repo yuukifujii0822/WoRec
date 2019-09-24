@@ -5,7 +5,7 @@ window.draw_graph = ->
         data: {
             labels: ["1月", "2月", "3月", "4月", "5月","6月"],
             datasets: [{
-                label: 'ベンチプレス',
+                label: gon.exercise_name,
                 data: [40, 55, 60, 70, 60, 65],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255,99,132,1)',
